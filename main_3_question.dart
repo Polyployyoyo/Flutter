@@ -102,7 +102,7 @@ class QuestionButton extends StatelessWidget {
 
     if (!context.mounted) return;
 
-    ScaffoldMessenger.of(context).removeCurrentSnackBar();
+    ScaffoldMessenger.of(context).removeCurrentSnackBar(); // ปิด SnarkBar ที่ขึ้นอยู่
 
     if (result == answer) {
       ScaffoldMessenger.of(context)
