@@ -101,7 +101,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //* Get data form "setting" parameter
+    //* Get data form "settings" parameter
     final todo = ModalRoute.of(context)!.settings.arguments as Welcome;
 
     return Scaffold(
