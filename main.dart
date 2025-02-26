@@ -126,7 +126,19 @@ class WelcomeScreen extends StatelessWidget {
             "Welcome, ${todo.username}",
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           ),
-          Text("Your password is ${todo.password}")
+          Text("Your password is ${todo.password}"),
+          SizedBox(
+            height: 40,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).removeCurrentSnackBar();
+                Navigator.pop(context);
+              },
+              child: Text(
+                "Go back!",
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ))
         ]),
       ),
     );
