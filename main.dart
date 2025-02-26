@@ -72,23 +72,35 @@ class MyTextForm extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context)
-                      ..removeCurrentSnackBar()
-                      ..showSnackBar(SnackBar(content: Text("Login Success")));
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WelcomeScreen(),
-                            //* Send data
-                            settings: RouteSettings(
-                                arguments: Welcome(usernameController.text,
-                                    passwordController.text))));
-                  }
-                },
-                child: Text("Login"))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      usernameController.clear();
+                      passwordController.clear();
+                    },
+                    child: Text("Cancel")),
+                ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context)
+                          ..removeCurrentSnackBar()
+                          ..showSnackBar(
+                              SnackBar(content: Text("Login Success")));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WelcomeScreen(),
+                                //* Send data
+                                settings: RouteSettings(
+                                    arguments: Welcome(usernameController.text,
+                                        passwordController.text))));
+                      }
+                    },
+                    child: Text("Login")),
+              ],
+            )
           ],
         ),
       ),
