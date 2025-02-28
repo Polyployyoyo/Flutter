@@ -60,7 +60,7 @@ class MyButton extends StatelessWidget {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => screen),
-    );
+    ); // โค้ดนี้จะจบก็ต่อเมื่อ หน้าที่เปิดมานั้น ส่งค่ามาหน้าแรก แล้วปิดหน้าตัวเองไป
 
     if (!context.mounted) return;
 
